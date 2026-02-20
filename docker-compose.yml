@@ -2,10 +2,18 @@ services:
   web:
     build:
       context: ./client
-      args:
-        # Baked into the static build by Vite at build time
-        VITE_PUBLIC_BASE_URL: ${VITE_PUBLIC_BASE_URL:-http://localhost:8080}
-        VITE_API_URL: ${VITE_API_URL:-http://localhost:5000}
+      args:  
+        # LOCAL MODE (default)
+        # Comment OUT this line to disable local mode
+        VITE_PUBLIC_BASE_URL: http://localhost:8080
+        # NGROK MODE
+        # UNCOMMENT this line when using ngrok (paste your ngrok URL here)
+        # VITE_PUBLIC_BASE_URL: https://your-ngrok-domain.ngrok.app
+        # API URL (backend)
+        # Local backend:
+        VITE_API_URL: http://localhost:5000
+        # ngrok backend:
+        # VITE_API_URL: https://your-api-ngrok.ngrok.app
     ports:
       - "8080:80"
     depends_on:
