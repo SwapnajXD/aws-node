@@ -1,25 +1,25 @@
-# 🚀 aws-node — Production-Ready URL Shortener
+# aws-node — Production-Ready URL Shortener
 
-**PostgreSQL + Redis + Node.js (Express) + React (Vite) + Docker + ngrok**
+PostgreSQL + Redis + Node.js (Express) + React (Vite) + Docker + ngrok
 
-A fully containerized, scalable **URL Shortener** application built with modern full-stack tooling.
-
----
-
-## ✨ Features
-
-- 🔗 Custom branded short URLs  
-- 🗄 PostgreSQL persistent storage  
-- ⚡ Redis caching for ultra-fast redirects  
-- 🖥 Node.js + Express backend  
-- 🎨 React + Vite frontend (served via Nginx)  
-- 🐳 Docker Compose for simple local setup  
-- 🌍 Optional ngrok integration for public/shareable links  
-- 🔐 Slug conflict protection & blocked extension security  
+A fully containerized, scalable URL Shortener application built with a modern full-stack architecture.
 
 ---
 
-## 📁 Project Structure
+## Features
+
+- Custom branded short URLs  
+- PostgreSQL persistent storage  
+- Redis caching for fast redirects  
+- Node.js + Express backend  
+- React + Vite frontend (served via Nginx)  
+- Docker Compose for local development  
+- Optional ngrok integration for public/shareable links  
+- Slug conflict protection and blocked extension security  
+
+---
+
+## Project Structure
 
 ```
 aws_node/
@@ -30,19 +30,19 @@ aws_node/
 
 ---
 
-# 🛠 Prerequisites
+# Prerequisites
 
 - Docker  
 - Docker Compose  
-- ngrok (optional — only needed for public links)  
+- ngrok (optional — required only for public links)
 
-Download ngrok manually:
+Download ngrok:
 
-👉 https://ngrok.com/download
+https://ngrok.com/download
 
 ---
 
-# ▶️ Run Locally (Development Mode)
+# Running Locally (Development Mode)
 
 Generates local links like:
 
@@ -50,7 +50,7 @@ Generates local links like:
 http://localhost:8080/<slug>
 ```
 
-### 1️⃣ Start the application
+## 1. Start the Application
 
 From the project root:
 
@@ -58,23 +58,23 @@ From the project root:
 docker compose up --build
 ```
 
-### 2️⃣ Access Services
+## 2. Access Services
 
 | Service   | URL                    |
 |------------|-----------------------|
 | Frontend   | http://localhost:8080 |
 | API        | http://localhost:5000 |
 
-### 3️⃣ Test It
+## 3. Test the Application
 
 1. Open `http://localhost:8080`
 2. Paste a long URL
 3. Generate a short link
-4. Click it — redirect works 🎉
+4. Click the link to verify redirect functionality
 
 ---
 
-# 🌍 Run With ngrok (Public Shareable Links)
+# Running with ngrok (Public Shareable Links)
 
 This enables public URLs like:
 
@@ -82,7 +82,7 @@ This enables public URLs like:
 https://your-domain.ngrok-free.dev/r/<slug>
 ```
 
-Only the **API (port 5000)** needs to be exposed via ngrok.
+Only the API (port 5000) needs to be exposed via ngrok.
 
 ---
 
@@ -102,13 +102,13 @@ In a new terminal:
 ngrok http 5000
 ```
 
-You will receive a public HTTPS URL:
+You will receive a public HTTPS URL such as:
 
 ```
 https://example-subdomain.ngrok-free.dev
 ```
 
-⚠️ On the free plan, this URL changes every time ngrok restarts.
+Note: On the free plan, this domain changes every time ngrok restarts.
 
 ---
 
@@ -136,30 +136,28 @@ VITE_API_URL: "https://example-subdomain.ngrok-free.dev"
 
 ## Step 4 — Rebuild Frontend Only
 
-Vite requires a rebuild when environment variables change.
+The frontend must be rebuilt when environment variables change.
 
 ```bash
 docker compose build web
 docker compose up
 ```
 
-Now generated links will be publicly accessible:
+Generated links will now be publicly accessible:
 
 ```
 https://example-subdomain.ngrok-free.dev/r/my-link-Ab12Cd
 ```
 
-✔ Shareable  
-✔ Accessible from anywhere  
-✔ Backend remains local  
+The backend does not require rebuilding.
 
 ---
 
-# 🔁 When ngrok Domain Changes
+# When ngrok Domain Changes
 
 Each time ngrok restarts:
 
-1. Copy new domain  
+1. Copy the new domain  
 2. Update in `docker-compose.yml`:
    - `VITE_PUBLIC_BASE_URL`
    - `VITE_API_URL`
@@ -170,15 +168,13 @@ docker compose build web
 docker compose up
 ```
 
-The backend does NOT need rebuilding.
-
 ---
 
-# 🧪 API Endpoints
+# API Endpoints
 
-### POST `/api/shorten`
+## POST `/api/shorten`
 
-Create a new short URL.
+Creates a new short URL.
 
 Request:
 
@@ -199,13 +195,13 @@ Response:
 
 ---
 
-### GET `/api/resolve/:slug`
+## GET `/api/resolve/:slug`
 
-Returns the original long URL (no redirect).
+Returns the original long URL without redirecting.
 
 ---
 
-### GET `/r/:slug`
+## GET `/r/:slug`
 
 Public redirect endpoint used for shareable links.
 
@@ -219,7 +215,7 @@ Redirects to the stored long URL.
 
 ---
 
-# 🏗 Tech Stack
+# Technology Stack
 
 | Layer      | Technology            |
 |------------|-----------------------|
@@ -232,11 +228,11 @@ Redirects to the stored long URL.
 
 ---
 
-# ⚠️ Important Notes
+# Important Notes
 
-- Frontend must be rebuilt if `VITE_PUBLIC_BASE_URL` changes.
-- API does NOT require rebuild when ngrok changes.
-- Public redirect path is always:
+- The frontend must be rebuilt if `VITE_PUBLIC_BASE_URL` changes.
+- The API does not require rebuilding when ngrok changes.
+- Public redirect path format:
 
 ```
 /r/<slug>
@@ -244,7 +240,7 @@ Redirects to the stored long URL.
 
 ---
 
-# 🧹 Optional Cleanup
+# Optional Cleanup
 
 If legacy root files exist:
 
@@ -252,7 +248,7 @@ If legacy root files exist:
 rm -f server.js Dockerfile package.json package-lock.json
 ```
 
-Keep structure clean:
+Keep the project structure clean:
 
 ```
 client/
@@ -261,12 +257,12 @@ server/
 
 ---
 
-# 🎉 Ready to Go
+# Ready for Use
 
-Your URL shortener now supports:
+This URL shortener supports:
 
-✔ Fast local development  
-✔ Public shareable URLs  
-✔ Redis-powered performance  
-✔ Dockerized architecture  
-✔ Clean production-ready structure  
+- Local development
+- Public shareable links
+- Redis-powered performance
+- Fully containerized deployment
+- Clean and production-ready structure
