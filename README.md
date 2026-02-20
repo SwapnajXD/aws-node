@@ -54,3 +54,17 @@ The next phase is to deploy this containerized app to a managed service on AWS, 
 - **Backend:** Express 5
 - **Frontend:** Vanilla HTML/CSS/JS (or other framework)
 - **Future Database:** AWS DynamoDB
+
+# aws_node — URL Shortener (PostgreSQL + Redis) — Dockerized
+
+A full-stack URL shortener:
+- Frontend: React (Vite), served by Nginx (SPA fallback)
+- Backend: Node.js + Express + PostgreSQL (pg) + Redis (optional caching)
+- Dev/Local: `docker compose up --build`
+- ngrok-ready: bake public URLs into the frontend so generated links look real
+
+## Quick start
+
+```bash
+# From repo root
+docker compose up --build
