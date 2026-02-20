@@ -1,18 +1,20 @@
-# Common
+# Node
 node_modules
-dist
-.DS_Store
-
-# Env
-.env
-.env.*
-*.local
-
-# Logs / locks
 npm-debug.log*
 yarn.lock
 pnpm-lock.yaml
 
+# Env / secrets
+.env
+.env.*
+*.local
+.env.web
+
+# Frontend build
+client/dist
+
+# System
+.DS_Store
+
 # Docker
 **/.dockerignore
-``
