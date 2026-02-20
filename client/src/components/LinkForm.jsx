@@ -40,15 +40,13 @@ export default function LinkForm({ onCreated }) {
         placeholder="https://example.com/very/long/path"
         value={longUrl}
         onChange={(e) => setLongUrl(e.target.value)}
-        style={{ padding: 10, fontSize: 16 }}
       />
       <input
         placeholder="your-freaky-phrase (optional)"
         value={phrase}
         onChange={(e) => setPhrase(e.target.value)}
-        style={{ padding: 10, fontSize: 16 }}
       />
-      <button type="submit" disabled={busy} style={{ padding: '10px 14px', fontSize: 16 }}>
+      <button type="submit" disabled={busy} style={{ padding: '10px 14px' }}>
         {busy ? 'Creating…' : 'Create freaky URL'}
       </button>
       {error && <div style={{ color: 'crimson' }}>{error}</div>}

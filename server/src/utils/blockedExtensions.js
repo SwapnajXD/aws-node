@@ -1,1 +1,6 @@
-export default ['.exe', '.bat', '.cmd', '.msi', '.sh', '.apk', '.jar', '.scr', '.com', '.vbs', '.ps1', '.zip', '.rar', '.7z', '.tar', '.gz', '.bz2', '.iso', '.dmg'];
+export default [
+  '.exe', '.bat', '.cmd', '.msi', '.sh', '.apk',
+  '.jar', '.scr', '.com', '.vbs', '.ps1',
+  '.zip', '.rar', '.7z', '.tar', '.gz', '.bz2',
+  '.iso', '.dmg'
+];

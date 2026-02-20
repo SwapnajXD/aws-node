@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import LinkForm from './components/LinkForm.jsx';
 import ResultCard from './components/ResultCard.jsx';
-import './App.css';
 
 export default function App() {
   const [result, setResult] = useState(null);

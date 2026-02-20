@@ -1,11 +1,17 @@
-# Node / general
+# Common
 node_modules
-npm-debug.log*
-pnpm-lock.yaml
-yarn.lock
 dist
-.env
 .DS_Store
+
+# Env
+.env
+.env.*
+*.local
+
+# Logs / locks
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
 
 # Docker
 **/.dockerignore
