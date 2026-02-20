@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 node_modules
 .env
+=======
+node_modules/
+.env
+.DS_Store
+dist/
+build/
+*.log
+>>>>>>> d0cff7b (Initial commit: URL shortener with Postgres and Docker (cleaned))
