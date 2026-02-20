@@ -1,0 +1,24 @@
+<!-- client/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS Node App</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; background: #232f3e; color: white; }
+        .card { background: white; color: black; display: inline-block; padding: 20px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Deployment Test</h1>
+        <p id="status">Loading API...</p>
+    </div>
+    <script>
+        fetch('/api/info')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message;
+            });
+    </script>
+</body>
+</html>
