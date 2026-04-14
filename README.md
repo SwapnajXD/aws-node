@@ -1,4 +1,4 @@
-# aws-node — Production-Ready URL Shortener
+# SlugStream — Production-Ready URL Shortener
 
 PostgreSQL + Redis + Node.js (Express) + React (Vite) + Docker + ngrok
 
@@ -22,7 +22,7 @@ A fully containerized, scalable URL Shortener application built with a modern fu
 ## Project Structure
 
 ```
-aws_node/
+SlugStream/
 ├── docker-compose.yml
 ├── client/      # React + Vite frontend (served via Nginx)
 └── server/      # Express API + PostgreSQL + Redis

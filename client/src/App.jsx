@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <div style={{ maxWidth: 720, margin: '40px auto', padding: 16, fontFamily: 'system-ui, sans-serif' }}>
-      <h1>aws_node — URL Shortener</h1>
+      <h1>SlugStream — URL Shortener</h1>
       <p style={{ color: '#555' }}>
         Make your URLs look <b>freaky</b> with a custom phrase — the redirect stays safe and deterministic.
       </p>

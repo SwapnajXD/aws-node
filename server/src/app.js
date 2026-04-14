@@ -6,7 +6,7 @@ import { pool, connectDB } from './config/db.js';
 import redis from './config/redis.js';
 import blockedExtensions from './utils/blockedExtensions.js';
 
-const log = pino({ name: 'aws_node-api' });
+const log = pino({ name: 'slugstream-api' });
 const app = express();
 
 /* ----------------------------------------------------------------
